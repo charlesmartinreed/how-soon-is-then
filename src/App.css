@@ -36,6 +36,8 @@
 /* NON-TEMPLATE STYLING BEGINS HERE */
 #head {
   /* color: #535c68; */
+  letter-spacing: 0.06em;
+  color: #121212;
 }
 
 #countdownTicker {
@@ -56,7 +58,7 @@
 
   display: block;
   font-size: 2.5em;
-  color: #30336b;
+  color: #f8d249;
 }
 
 #countdownTicker ul {
@@ -71,5 +73,6 @@
   display: inline-block;
   font-size: 1.5em;
   text-transform: uppercase;
-  color: white;
+  color: #121212;
+  letter-spacing: 0.03em;
 }
