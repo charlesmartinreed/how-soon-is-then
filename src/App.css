@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #130f40;
-  min-height: 75vh;
+  background-color: #30336b;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,12 +37,28 @@
 #head {
   /* color: #535c68; */
   letter-spacing: 0.06em;
-  color: #121212;
+  color: #c9c9c9;
 }
 
 #countdownTicker {
   margin: 0 auto;
   width: 70%;
+  position: relative;
+}
+
+#countdownLabel {
+  width: 70%;
+  margin: 0 auto;
+  height: 10vh;
+  display: grid;
+  place-items: center;
+  font-size: 2.2em;
+  letter-spacing: 0.05em;
+  color: #badc58;
+}
+
+#countdownLabel span {
+  display: inline-block;
 }
 
 #countdownTicker span {
@@ -73,6 +89,6 @@
   display: inline-block;
   font-size: 1.5em;
   text-transform: uppercase;
-  color: #121212;
+  color: #c9c9c9;
   letter-spacing: 0.03em;
 }

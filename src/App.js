@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
   const second = 1000,
@@ -41,6 +43,10 @@ function App() {
     }, [delay]);
   }
 
+  function handleDateChange(e) {
+    setFutureDate(new Date(e).getTime());
+  }
+
   useInterval(() => {
     // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 
@@ -65,6 +71,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 id="head">How Soon Is Then?</h1>
+        <DatePicker
+          selected={futureDate}
+          dateFormat="EEEE, MMM d, yyyy"
+          onChange={(e) => handleDateChange(e)}
+        />
       </header>
 
       <div id="countdownTicker">
@@ -83,6 +94,7 @@ function App() {
           </li>
         </ul>
       </div>
+      <div id="countdownLabel">UNTIL TEST EVENT</div>
     </div>
   );
 }
