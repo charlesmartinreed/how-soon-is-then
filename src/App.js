@@ -58,13 +58,18 @@ function App() {
     let minutes = Math.floor((distance % hour) / minute);
     let seconds = Math.floor((distance % minute) / second);
 
+    console.log(distanceObj.seconds);
+
     setDistanceObj({ days, hours, minutes, seconds });
 
     // update the DOM element representing the particular time interval here
     document.getElementById("days").innerText = distanceObj.days;
     document.getElementById("hours").innerText = distanceObj.hours;
     document.getElementById("minutes").innerText = distanceObj.minutes;
-    document.getElementById("seconds").innerText = distanceObj.seconds;
+    document.getElementById("seconds").innerText =
+      distanceObj.seconds <= 9 || distanceObj.seconds === 0
+        ? `0${distanceObj.seconds}`
+        : distanceObj.seconds;
   }, second);
 
   return (
