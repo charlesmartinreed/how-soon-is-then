@@ -24,6 +24,8 @@ function App() {
     seconds: Math.floor((distance % minute) / second),
   });
 
+  let [eventName, setEventName] = useState("Designed by Charles Martin Reed");
+
   function useInterval(cb, delay) {
     const savedCallback = useRef();
 
@@ -44,7 +46,14 @@ function App() {
   }
 
   function handleDateChange(e) {
-    setFutureDate(new Date(e).getTime());
+    let event = prompt("What's the name of your event?");
+
+    if (event !== null && event !== "") {
+      setFutureDate(new Date(e).getTime());
+      setEventName(`Until ${event}`);
+    } else {
+      event = prompt("What's the name of your event?");
+    }
   }
 
   useInterval(() => {
@@ -57,8 +66,6 @@ function App() {
     let hours = Math.floor((distance % day) / hour);
     let minutes = Math.floor((distance % hour) / minute);
     let seconds = Math.floor((distance % minute) / second);
-
-    console.log(distanceObj.seconds);
 
     setDistanceObj({ days, hours, minutes, seconds });
 
@@ -77,7 +84,9 @@ function App() {
       <header className="App-header">
         <h1 id="head">How Soon Is Then?</h1>
         <DatePicker
+          className="datePicker"
           selected={futureDate}
+          title="Hello"
           dateFormat="EEEE, MMM d, yyyy"
           onChange={(e) => handleDateChange(e)}
         />
@@ -99,7 +108,7 @@ function App() {
           </li>
         </ul>
       </div>
-      <div id="countdownLabel">UNTIL TEST EVENT</div>
+      <div id="countdownLabel">{eventName}</div>
     </div>
   );
 }

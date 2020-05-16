@@ -57,6 +57,17 @@
   color: #badc58;
 }
 
+#countdownLabel::after {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  width: 50%;
+  left: 25%;
+  height: 8px;
+  background-color: rgba(186, 220, 88, 0.2);
+  z-index: -1;
+}
+
 #countdownLabel span {
   display: inline-block;
 }
@@ -91,4 +102,27 @@
   text-transform: uppercase;
   color: #c9c9c9;
   letter-spacing: 0.03em;
+}
+
+.datePicker {
+  padding: 1.25rem 3rem;
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  color: #333;
+  /* background-color: #2a2d63; */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: transparent;
+  border-radius: 0.4rem;
+  outline: none;
+  text-align: center;
+  transform: translateX(-3rem);
+  transition: 0.2s ease-out;
+  box-shadow: 1px 1px 0.6rem rgba(0, 0, 0, 0.5);
+}
+
+.datePicker:focus {
+  color: #222;
+  text-shadow: 0.5px 1px 2.5px rgba(0, 0, 0, 0.3);
 }
