@@ -56,6 +56,11 @@ function App() {
     }
   }
 
+  function formatTimeInterval(value) {
+    // 9 not 10 because distanceObj.second is always a tick
+    return value < 10 ? `0${value}` : value;
+  }
+
   useInterval(() => {
     // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 
@@ -70,13 +75,19 @@ function App() {
     setDistanceObj({ days, hours, minutes, seconds });
 
     // update the DOM element representing the particular time interval here
-    document.getElementById("days").innerText = distanceObj.days;
-    document.getElementById("hours").innerText = distanceObj.hours;
-    document.getElementById("minutes").innerText = distanceObj.minutes;
-    document.getElementById("seconds").innerText =
-      distanceObj.seconds <= 9 || distanceObj.seconds === 0
-        ? `0${distanceObj.seconds}`
-        : distanceObj.seconds;
+    document.getElementById("days").innerText = formatTimeInterval(
+      distanceObj.days
+    );
+
+    document.getElementById("hours").innerText = formatTimeInterval(
+      distanceObj.hours
+    );
+    document.getElementById("minutes").innerText = formatTimeInterval(
+      distanceObj.minutes
+    );
+    document.getElementById("seconds").innerText = formatTimeInterval(
+      distanceObj.seconds
+    );
   }, second);
 
   return (
