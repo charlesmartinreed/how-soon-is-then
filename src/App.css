@@ -52,19 +52,23 @@
   height: 10vh;
   display: grid;
   place-items: center;
-  font-size: 2.2em;
+  font-size: 1.8em;
   letter-spacing: 0.05em;
   color: #badc58;
+  text-transform: uppercase;
+  text-shadow: 1px 4px 7px rgba(0, 0, 0, 0.7);
 }
 
 #countdownLabel::after {
   content: "";
   position: absolute;
   bottom: 40px;
-  width: 50%;
-  left: 25%;
-  height: 8px;
-  background-color: rgba(186, 220, 88, 0.2);
+  width: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 14px;
+  background-color: rgba(186, 220, 88, 0.3);
+  box-shadow: 0px 3px 1rem rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
@@ -108,7 +112,7 @@
   padding: 1.25rem 3rem;
   font-size: 2.1rem;
   text-transform: uppercase;
-  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
   width: 100%;
   color: #333;
   /* background-color: #2a2d63; */
@@ -120,6 +124,10 @@
   transform: translateX(-3rem);
   transition: 0.2s ease-out;
   box-shadow: 1px 1px 0.6rem rgba(0, 0, 0, 0.5);
+}
+
+.datePicker::after {
+  content: "";
 }
 
 .datePicker:focus {

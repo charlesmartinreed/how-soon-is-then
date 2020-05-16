@@ -24,7 +24,7 @@ function App() {
     seconds: Math.floor((distance % minute) / second),
   });
 
-  let [eventName, setEventName] = useState("Designed by Charles Martin Reed");
+  let [eventName, setEventName] = useState("Designed by Charlie");
 
   function useInterval(cb, delay) {
     const savedCallback = useRef();
@@ -86,6 +86,7 @@ function App() {
         <DatePicker
           className="datePicker"
           selected={futureDate}
+          minDate={new Date(Date.now() + 8.64e7)}
           title="Hello"
           dateFormat="EEEE, MMM d, yyyy"
           onChange={(e) => handleDateChange(e)}
